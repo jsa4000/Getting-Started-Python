@@ -69,3 +69,12 @@ This will bring up the properties which you can then change to suit your prefere
 - Change args (Arguments) from ["Helloworld.ts"] to ["${file}"] (filename)
 - Delete the last property problemMatcher
 - Save the changes made
+
+##3. Git
+
+> For further details check this link: https://code.visualstudio.com/Docs/editor/versioncontrol
+
+
+
+
+
