@@ -1,15 +1,19 @@
 import numpy as np
 
-x = 1
-y = 2
+_my item = 1
+yItem = 2
 
-def sumi(a,b):
+def sumi(arg,barg):
     return a+b
 
-# This a sumt
-print(sumi(x, y))
+def check_modality(name, mode, option_list):
+    checker = build_checker(name, mode)
+    return checker.check_option(option_list)
 
-a = [[2,3],[4,5]]
-anp = np.asarray(a,dtype = "float")
+# This a sumt
+print(sumi(xItem, y))
+
+a = [[2,3],[4,5],[2,3]]
+anp=np.asarray(a, dtype="float")
 
 print ("El tamaño es", anp.shape)
