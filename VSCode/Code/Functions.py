@@ -93,7 +93,6 @@ print("# Decorators")
 
 # A decoratos it's a functiona that it's called prior to another so:
 
-
 # Following are the idea behidn decoratos
 def my_function():
     """
@@ -111,7 +110,6 @@ def my_decorator(func):
 
 #Let's call to the the function
 my_decorator(my_function)
-
 
 # So let's imagine we want to create a function that print the time that takes
 # the execution of any function
@@ -160,6 +158,9 @@ print(my_value)
 #     way JavaScript manage the clases because a function at the end define initial
 #     values befire it's called.
 
+# INNER Functions
+print("Inner Functions")
+
 #An example of closure function
 def generate_power(number):
     """
@@ -180,9 +181,125 @@ print(mypowr_func(2))
 print(mypowr_func(2))
 print(mypowr_func(2))
 
-# Now lets see some helpuf options
+# Now lets see some helpful builtin function in Python
 # Map, reduce and Filter
+# Follow this link for more information: http://book.pythontips.com/en/latest/map_filter.html
 
+#Let's define some functions
+def add_number(number1, number2):
+    """
+    This is a function to add two numbers
+    """
+    return number1 + number2
+
+def power_number(number, power=2):
+    """
+    This is a function to power a number
+    """
+    return number**power
+
+# Map
+print("Map Function")
+
+# Let's define an array to operate with
+my_array = [0, 1, 2, 3, 4, 5, 6]
+my_powered_array = map(power_number, my_array)
+print(my_array)
+# Let's print the result. As you can see it0s a map object (yield).
+# So it's need to be casted or iterate over.
+print(my_powered_array)
+# Cast the object. For example into a tuple
+print(tuple(my_powered_array))
+
+#Also, let's use twor parameters to the map function
+my_array2 = [0, 11, 12, 13, 14, 15, 16]
+my_added_array = map(add_number, my_array, my_array2)
+print(tuple(my_added_array))
+
+#Filter
+# Filter, this will filter the elements of a list, without iterate over the entire list
+print("Filter Function")
+my_array = [0, 1, 2, 3, 4, 5, 6]
+
+def is_Even(number):
+    """
+    This function check if the number is a par number or not
+    """
+    if number % 2 == 0:
+        return True
+    else:
+        return False
+
+# Call to the filter function
+my_even_array = filter(is_Even, my_array)
+print(tuple(my_even_array))
+
+#In this case I will use the common way to  used filter that it's using lambda function
+my_even_array = filter(lambda x: x % 2 == 0, my_array)
+print(tuple(my_even_array))
+
+print("Reduce Function")
+print("Reduce Function is no longer include in the bultin functions")
+#Reduce
+# This has been moved in Python 3
+# Now let's use reduce function
+#from functools import reduce
+
+#product = reduce(lambda x, y: x*y, [1, 2, 3, 4])
+#print(tuple(product))
+
+# Now let's see Zip function
+# Zip function combine 1 to 1 elemento of each array with each other
+print("Zip Function")
+array_merge_1 = ["Javier", "Pedro", "Juan"]
+array_merge_2 = ["Santos", "Gracia", "Martin"]
+array_merge_3 = ["12", "33", "45"]
+
+array_merged = zip(array_merge_1, array_merge_2, array_merge_3)
+print(list(array_merged))
+
+# Since the arrays are not equal in size
+# zip function only will use the element that can be paired
+array_merge_1 = ["Javier", "Pedro", "Juan"]
+array_merge_2 = ["Santos", "Gracia"]
+array_merge_3 = ["12", "33", "45"]
+
+array_merged = zip(array_merge_1, array_merge_2, array_merge_3)
+print(list(array_merged))
+
+#eval
+print("Eval function")
+
+#simple evaluation function
+x = 2
+eval("print(x+1)")
+
+# Another use of the eval function is to evaluate call by using just strings
+def test(str_param):
+    print("Hello " + str_param)
+call_str = "test"
+phrase_eval = eval(call_str)("Javier")
+
+#exec
+print("Exec function")
+
+# This function will be defined to execute later in exec
+line1 = "def add_number(number1, number2):"
+line2 = "    #This is a comnetary"
+line3 = "    return number1 + number2"
+line4 = "x = 2"
+line5 = "y = 3"
+line6 = "z = add_number(x,y)"
+line7 = "print(z)"
+line8= "print('Last sentence')"
+lines = [line1, line2, line3, line4, line5, line6, line7, line8]
+StrExec = ""
+for line in lines:
+    StrExec += line + "\n"
+print(StrExec)
+# Finally print eval
+print("Exec function")
+exec(StrExec)
 
 
 
