@@ -4,14 +4,14 @@ import numpy as np
 
 
 dimensions = 1
-x = numpy.random.RandomState(1).rand(3, 2, 5, 5) # Max pool will take the last two indexes for the pooling
+x = np.random.RandomState(1).rand(3, 2, 5, 5) # Max pool will take the last two indexes for the pooling
 
 
 shape_x = np.asarray(x.shape)
 o_shape = []
 o_shape.extend(shape_x[range(dimensions - 1)]) #Get the (dimension - 1) values
 o_shape.extend([np.prod(shape_x[(dimensions - 1):])]) #Final product from (dimensions - 1) to ndim
-print tuple(o_shape)
+print (tuple(o_shape))
 print (x.reshape(tuple(o_shape)))
 
 
@@ -29,7 +29,7 @@ def get_flattened_shape(x_shape, dimensions = 2):
     return tuple(o_shape)
 
 dimensions = 1
-x = numpy.random.RandomState(1).rand(3, 2, 5, 5) # Max pool will take the last two indexes for the pooling
+x = np.random.RandomState(1).rand(3, 2, 5, 5) # Max pool will take the last two indexes for the pooling
 print (get_flattened_shape(x.shape, dimensions))
 
 
@@ -52,7 +52,7 @@ y = flatten(x,t)
 func = theano.function([w,d],y)
 
 dimensions = 1
-new = numpy.random.RandomState(1).rand(3, 2, 5, 5) # Max pool will take the last two indexes for the pooling
+new = np.random.RandomState(1).rand(3, 2, 5, 5) # Max pool will take the last two indexes for the pooling
 
 flattened = func (new,dimensions)
 print (flattened)
