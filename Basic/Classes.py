@@ -128,23 +128,17 @@ myFunction("Javier","C\GranVia",22)
 myFunction("Javier","C\GranVia",dead=True)
 myFunction("Javier","C\GranVia",34,True)
 
-#Bad calls
+#Bad calls [COMMENTED]
 
 # Mandatory parameters needed
-myFunction()
-myFunction("Javier")
-myFunction("C\GranVia")
-myFunction(city=None)
-myFunction("Javier","C\GranVia",True, 33) # Wrong order
+#myFunction()
+#myFunction("Javier")
+#myFunction("C\GranVia")
+#myFunction(city=None)
+#myFunction("Javier","C\GranVia",True, 33) # Wrong order
 
 # Wrong order of parameters
-myFunction(city="Madrid","Javier","C\GranVia")
-
-
-
-
-
-
+#myFunction(city="Madrid","Javier","C\GranVia")
 
 # args or unnamed arguments.
 
@@ -171,14 +165,12 @@ def test_kwargs(**kwargs):
     This function will return all the named values within the call
     """
     if kwargs is not None:
-        for key, value in kwargs.iteritems():
-            print "%s == %s" %(key,value)
-
+        for key in kwargs:
+            print(("{0} == {1}").format(key, kwargs[key]))
 
 test_kwargs(name="yasoob")
 
-
-# Following a function that could be used inside a function to get all the args 
+# Following a function that could be used inside a function to get all the args
 # and kwargs into a list.
 def extract_args_kwargs(locals):
     """
