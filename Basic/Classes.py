@@ -3,6 +3,9 @@ This file is going to explain some of the functionailty of the Classes
 """
 # pylint: disable=invalid-name
 
+#exec
+print("#Creating Classes ")
+
 # Following a basic definition of a Class using Python
 
 class Car(object):
@@ -105,6 +108,8 @@ print(car.class_name)
 print(car2.class_name)
 
 
+#exec
+print("# *args and **kwargs")
 # *args and **kwargs
 
 # First at all let's see how the args are passed into the functions
@@ -187,6 +192,8 @@ def extract_args_kwargs(locals):
             params[key] = locals.get(key)
     return params
 
+
+print("# Inheritance")
 # Inheritance.
 
 # Following example could be very useful to serializa or deserialize an object.
@@ -297,6 +304,8 @@ class BaseNode(BaseClass):
         super.set_attr("name", name)
         return self
 
+
+print("# internal variables in Python")
 # Members and internal variables in Python
 # __class__, __type__, __call__, __init__, etc..
 

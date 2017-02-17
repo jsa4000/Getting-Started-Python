@@ -25,6 +25,9 @@ import numpy as np
 # NOTE: Numpy are numerical arrays N-dimensions, so it doesn't support stirngs
 #       or other types nos strcutures.
 
+
+print("# Creating arrays (array vs asarray)")
+
 py_array_f = [[1.2, 2], [3.5, 4], [5.2, 6.6]]
 print(type(py_array_f))
 print(py_array_f)
@@ -128,6 +131,72 @@ normal_dist = np.random.normal(scale=sigma,size=size)
 print(normal_dist)
 normal_matrix = np.reshape(normal_dist, (6, 2, 1))
 print(normal_matrix)
+
+# Inference the shape of the Reshape.abs
+
+# In order to do this you have to set "-1"" for the dimension you want 
+# Let numpy to inference for you. e.j. (1,-1,3)
+#
+# Anoter thing to know it's to remone dimensions or flatten again.
+# This is done by just let empty the dimention you want to remove.abs
+#    e.j.  You have (2,4), to flatten you need to use (8,)
+
+# Some times it's really helpuf to let Numpy inference some of the
+# values of the shape. This simplify the process and somtimes can
+# result very fancy if the shape dinamically change.
+print("# Creating original array for reshape")
+my_array = np.linspace(0, 12, 8)
+print(my_array.ndim)
+print(my_array.shape)
+print(my_array)
+# Let's manually do the reshape
+print("# Reshape to (2,2,2)")
+my_shaped_array = np.reshape(my_array,(2,2,2)) # 2*2*2* = 8
+print(my_shaped_array.ndim)
+print(my_shaped_array.shape)
+print(my_shaped_array)
+# Let's manually do the reshape
+print("# Reshape to (2,4)")
+my_shaped_array = np.reshape(my_array,(2,4)) # 2*4* = 8
+print(my_shaped_array.ndim)
+print(my_shaped_array.shape)
+print(my_shaped_array)
+# Let's manually do the reshape
+print("# Reshape to (4,2)")
+my_shaped_array = np.reshape(my_array,(4,2)) # 2*4* = 8
+print(my_shaped_array.ndim)
+print(my_shaped_array.shape)
+print(my_shaped_array)
+
+# Let's manually do the reshape
+print("# Reshape to (4,2)")
+my_shaped_array = np.reshape(my_array,(4,2)) # 2*4* = 8
+print(my_shaped_array.ndim)
+print(my_shaped_array.shape)
+print(my_shaped_array)
+
+print("# Reshape to (4)")
+#remember to just write "(4,)" and nothing after that.
+# This won't work (4,0)
+my_shaped_array = np.reshape(my_array,(8,)) # 2*4* = 8
+print(my_shaped_array.ndim)
+print(my_shaped_array.shape)
+print(my_shaped_array)
+
+# Let's automatically do the reshape
+print("# Inferenced Reshape to (4,2)")
+my_shaped_array = np.reshape(my_array,(-1,2)) # 2*4* = 8
+print(my_shaped_array.ndim)
+print(my_shaped_array.shape)
+print(my_shaped_array)
+# Let's automatically do the reshape
+print("# Inferenced Reshape to (2,2,2)")
+my_shaped_array = np.reshape(my_array,(2,-1,2)) # 2*4* = 8
+print(my_shaped_array.ndim)
+print(my_shaped_array.shape)
+print(my_shaped_array)
+
+
 # Or Flatter again the  Matrix
 normal_dist = normal_matrix.flatten()
 # Or Flatter again the  Matrix (revel seems more quickest)

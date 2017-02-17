@@ -54,6 +54,8 @@ import csv
 #           working with a file
 
 
+print("Creating Text files")
+
 # In order to separate the write data. It's neede to add \n\r to the
 # end of each line, since there is no specific method to do it
 
@@ -69,6 +71,8 @@ file.writelines(lines)
 
 # finally it's needed to close the file after the operations
 file.close()
+
+print("Reading Text files")
 
 # Open and read file
 # We can start writing into the file by using the handle that open returns
@@ -91,7 +95,7 @@ print(readed)
 # finally it's needed to close the file after the operations
 file.close()
 
-#   2 - Reading the entire file file.read()
+#2 - Reading the entire file file.read()
 # Open text file (read mode)
 file = open("c:/file.txt", "r")
 
@@ -143,6 +147,9 @@ print(readed)
 
 # finally it's needed to close the file after the operations
 file.close()
+
+
+print("Reading csv files")
 
 # Not let's take a look at csv files instead.
 # We have the following csv file
