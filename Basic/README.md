@@ -3,9 +3,9 @@
 1. Sequences
 
  - Types
- - Sequences: Tuples, List and Dictionaries
+ - Tuples, List and Dictionaries
  - Strings and Formatting
- - Oparations over sequences: set, sort, enumerate..
+ - Operations over sequences: set, sort, enumerate..
  - Indexing, Slicing, Split..
 
 2. Sentences
@@ -27,7 +27,7 @@
 
 4. Classes
 
- - Classes, properties/setters
+ - Classes, contructor, properties/setters, functions, etc..
  - Private, public and protected memebers
  - Args & Kwargs
  - Inheritance (self and super)
