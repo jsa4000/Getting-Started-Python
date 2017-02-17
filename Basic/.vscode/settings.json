@@ -2,5 +2,8 @@
 //"python.pythonPath": "python"
 //"python.pythonPath": "C:/Users/javier.santos/AppData/Local/Continuum/Anaconda2/Python.exe"
 {
-        "python.pythonPath": "python"
+        "python.pythonPath": "python",
+        "python.linting.pylintArgs": [
+                 "--extension-pkg-whitelist=numpy"
+                 ]
 }
