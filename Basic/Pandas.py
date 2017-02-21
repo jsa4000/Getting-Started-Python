@@ -458,8 +458,9 @@ print(df_csv.head())
 #Clean Missing Values
 print("Clean Missing Values")
 
-# In order to fill the missing values there is an automatic method
-# that allow you this functionality
+# In order to fill missing values, there is an automatic method
+# that allow you fill the empty values with the method you prefer.
+#In this case I have shose ffill 
 df = df.fillna(method='ffill')
 df.head()
 
