@@ -14,6 +14,56 @@ import pandas as pd
 import numpy as np
 # pylint: disable=invalid-name
 
+print("Before Starting")
+
+# Before starting I want to settle few things befure jumping start to the use of Pandas.
+# Pandas it's really helpful for parsing and loading tabular files into an structure
+# There are two mayor main features in Pandas you have to know.
+#
+# - Series: 1D data. In the series you can not access 2D data, so you will have access
+#   to your values using and index. But you cannot append more lines or row. In order
+#   to do this you will need to create a dataframe.
+#
+# - Dataframes: 2D spreadsheed data, in this case you can access to your data by
+#   using row and columns. Each row and columns wll be identified by an index. Also
+#   you could have multi-indexes like other many data bases.
+#
+# Another important aspect to take into consideration is the way to access to the 
+# Data. Pandas uses Numpy as a base for numerial and for performances reasons.
+# there are different ways to access to the data. The best way is using loc or iloc.
+# However I will explain also some another methors.
+
+# NOTES:
+#   - Inclussive means that index will be take into account for the indexing.
+#   - Exclusive means the index won't be included for the indexing.
+#
+# To sumarize, indexing by key will be inclusive and indexing by position will be
+#   exclusive.
+#       [0:3] -> 1 cinlusive, 3 exclusive. This will return [0, 1, 2]
+#       ["name":"observation"] -> both inclusive. This will return all the columns
+#                                  inbetween from "name"" to "observations". Both
+#                                   will be also included in the view.
+
+
+
+#  1. loc (both inclusive). This is to access to your row and columns by using the
+#   index key. You have to use: 
+#         df.loc[row,columns]
+#               
+#  2. iloc (inclusive-exclusinve)
+#               df.iloc[row,columns]          
+#  3. ix: hybrid between loc and iloc. Not recommmended at all.
+#         This will return alements by using position and keywords at the same time.
+#  4. Direct indexing using df. This way it's a bit confusing.
+#      4.1 If you use "keywords", the selection will be by columns. 
+#           df[["name,"obercation""]] this will return a new view with both columns
+#           df [1:3] -> This will return from 1 to 2 rows
+#               NOTE: Remeber indexing by position will return rows.
+#                     The last index will be exclusive.
+
+
+
+
 print("Pandas information")
 
 # To get the available methods/attributes of Pandas module use dir
